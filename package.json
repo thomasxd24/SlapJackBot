@@ -1,0 +1,24 @@
+{
+  "name": "slapjackbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasxd24/SlapJackBot.git"
+  },
+  "author": "thomasxd24",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomasxd24/SlapJackBot/issues"
+  },
+  "homepage": "https://github.com/thomasxd24/SlapJackBot#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "discord.js": "github:discordjs/discord.js",
+    "klasa": "github:dirigeants/klasa"
+  }
+}
