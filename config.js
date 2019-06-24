@@ -179,4 +179,4 @@ exports.config = {
 };
 
 // The token for this bot to login with
-exports.token = 'NTkyODMzMDI1Mzk0NDc1MDEx.XRFE5g.u8uEqk7M6KCad8SIixw_fo53aa0';
+exports.token = 'token';
