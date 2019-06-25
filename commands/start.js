@@ -2,6 +2,10 @@ const { Command } = require('klasa');
 const { Collection, MessageEmbed } = require('discord.js');
 const { decks } = require('cards');
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
 
 module.exports = class extends Command {
 
@@ -44,13 +48,21 @@ module.exports = class extends Command {
         users.forEach(element => {
             hands.set(element,deck.draw(Math.floor(52/users.length)))
         });
+        for (let index = 0; index < 20; index++) {
+            var card = hands.first().shift();
+        console.log(card)
+        var rank = isNaN(card.rank.shortName)?card.rank.longName.toLowerCase():card.rank.shortName;
         var embed = 
         {
             image: {
-                url: "https://github.com/hayeah/playing-cards-assets/raw/master/png/10_of_hearts.png"
+                url: `https://github.com/thomasxd24/SlapJackBot/blob/master/assets/cards/${rank}_of_${card.suit.name}.png?raw=true`
               }
         }
         gameMessage.edit(new MessageEmbed(embed))
+        await sleep(5000)
+            
+        }
+        
         
 
     }
