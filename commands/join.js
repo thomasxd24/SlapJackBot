@@ -32,8 +32,10 @@ module.exports = class extends Command {
     }
 
     async run(message, [...params]) {
-        // This is where you place the code you want to run for your command
-        ;
+        const users = message.guild.settings.get("playerInGame");
+        if(users.include(message.author)) return message.send("Already in game!");
+        message.guild.settings.update("playerInGame",message.author);
+        return message.send("You have joined the game!")
     }
 
     async init() {

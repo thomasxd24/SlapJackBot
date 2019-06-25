@@ -1,4 +1,6 @@
 const { Command } = require('klasa');
+const { decks } = require('cards');
+
 
 module.exports = class extends Command {
 
@@ -32,8 +34,13 @@ module.exports = class extends Command {
     }
 
     async run(message, [...params]) {
-        // This is where you place the code you want to run for your command
-        ;
+        let users = message.guild.settings.get("playerInGame");
+        if(users.length < 2) return message.send("Player insufficant.")
+        var gameMessage = await message.send("Game starting...");
+        const deck = new decks.StandardDeck();
+        deck.shuffleAll();
+        
+
     }
 
     async init() {
