@@ -14,6 +14,6 @@ class MyKlasaClient extends Client {
     // Add any methods to your Klasa Client
 
 }
-KlasaClient.defaultGuildSchema.add('playerInGame', 'User', { array: true });
-KlasaClient.defaultGuildSchema.add('gameStarted', 'boolean');
+MyKlasaClient.defaultGuildSchema.add('playerInGame', 'User', { array: true });
+MyKlasaClient.defaultGuildSchema.add('gameStarted', 'boolean');
 new MyKlasaClient(config).login(token);

@@ -33,7 +33,7 @@ module.exports = class extends Command {
 
     async run(message, [...params]) {
         const users = message.guild.settings.get("playerInGame");
-        if(users.include(message.author)) return message.send("Already in game!");
+        if(users.includes(message.author)) return message.send("Already in game!");
         message.guild.settings.update("playerInGame",message.author);
         return message.send("You have joined the game!")
     }

@@ -1,4 +1,5 @@
 const { Command } = require('klasa');
+const { Collection, MessageEmbed } = require('discord.js');
 const { decks } = require('cards');
 
 
@@ -35,10 +36,21 @@ module.exports = class extends Command {
 
     async run(message, [...params]) {
         let users = message.guild.settings.get("playerInGame");
-        if(users.length < 2) return message.send("Player insufficant.")
+        // if(users.length < 2) return message.send("Player insufficant.")
         var gameMessage = await message.send("Game starting...");
         const deck = new decks.StandardDeck();
         deck.shuffleAll();
+        var hands = new Collection();
+        users.forEach(element => {
+            hands.set(element,deck.draw(Math.floor(52/users.length)))
+        });
+        var embed = 
+        {
+            image: {
+                url: "https://github.com/hayeah/playing-cards-assets/raw/master/png/10_of_hearts.png"
+              }
+        }
+        gameMessage.edit(new MessageEmbed(embed))
         
 
     }
