@@ -4,6 +4,8 @@
  * This file is init with defaults from both Klasa and Discord.js.
  */
 
+
+
 exports.config = {
     /**
      * General Options
@@ -179,4 +181,4 @@ exports.config = {
 };
 
 // The token for this bot to login with
-exports.token = 'token';
+exports.token = process.env.BOT_TOKEN;

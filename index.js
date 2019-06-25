@@ -1,5 +1,7 @@
+require('dotenv').config()
 const { Client } = require('klasa');
 const { config, token } = require('./config');
+
 
 class MyKlasaClient extends Client {
 

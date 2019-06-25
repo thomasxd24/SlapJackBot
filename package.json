@@ -19,6 +19,7 @@
   "description": "",
   "dependencies": {
     "discord.js": "github:discordjs/discord.js",
+    "dotenv": "^8.0.0",
     "klasa": "github:dirigeants/klasa"
   }
 }
