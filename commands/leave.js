@@ -32,10 +32,18 @@ module.exports = class extends Command {
     }
 
     async run(message, [...params]) {
-        const users = message.guild.settings.get("playerInGame");
-        if(users.includes(message.author)) return message.send("Already in game!");
-        message.guild.settings.update("playerInGame",message.author,{action:"add"});
-        return message.send("You have joined the game!")
+        await message.guild.settings.update("playerInGame",message.author.id,{action: "remove"})
+        if(message.guild.hands != null)
+        {
+            var oldHand = message.guild.hands.get(message.author.id)
+            message.guild.hands.delete(message.author.id)
+            var users = message.guild.settings.get("playerInGame")
+            var eachItem = Math.floor(oldHand.length / users.length)
+            users.forEach(element => {
+                message.guild.hands.get(element).push(...oldHand.splice(0,eachItem))
+            });
+        }
+        message.send(`**${message.author.username}**Left the match!`)
     }
 
     async init() {

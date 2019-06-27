@@ -31,6 +31,8 @@ exports.config = {
     // A once ready message for your console
     readyMessage: (client) => `Successfully initialized. Ready to serve ${client.guilds.size} guild${client.guilds.size === 1 ? '' : 's'}.`,
 
+    ownerID:"186824408227119104",
+
     /**
      * Caching Options
      */
