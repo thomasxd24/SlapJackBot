@@ -24,18 +24,27 @@ module.exports = class extends Command {
             permissionLevel: 0,
             description: '',
             extendedHelp: 'No extended help available.',
-            usage: '',
+            usage: '[userJoin:user]',
             usageDelim: undefined,
             quotedStringSupport: false,
             subcommands: false
         });
     }
 
-    async run(message, [...params]) {
+    async run(message, [user]) {
         const users = message.guild.settings.get("playerInGame");
-        if(users.includes(message.author)) return message.send("Already in game!");
-        message.guild.settings.update("playerInGame",message.author,{action:"add"});
-        return message.send("You have joined the game!")
+        if(users.includes(message.author.id)) return message.send("Already in game!");
+        if(user)
+        {
+            message.guild.settings.update("playerInGame",message.author.id,{action:"add"});
+            return message.send(`<@${message.author}> have joined the game!`)
+        }
+        else
+        {
+            message.guild.settings.update("playerInGame",message.author.id,{action:"add"});
+            return message.send("You have joined the game!")
+        }
+        
     }
 
     async init() {

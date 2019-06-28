@@ -43,7 +43,7 @@ module.exports = class extends Command {
                 message.guild.hands.get(element).push(...oldHand.splice(0,eachItem))
             });
         }
-        message.send(`**${message.author.username}**Left the match!`)
+        message.send(`<@${message.author.id}> left the match!`)
     }
 
     async init() {
