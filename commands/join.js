@@ -36,8 +36,8 @@ module.exports = class extends Command {
         if(users.includes(message.author.id)) return message.send("Already in game!");
         if(user)
         {
-            message.guild.settings.update("playerInGame",message.author.id,{action:"add"});
-            return message.send(`<@${message.author}> have joined the game!`)
+            message.guild.settings.update("playerInGame",user.id,{action:"add"});
+            return message.send(`${user} have joined the game!`)
         }
         else
         {
