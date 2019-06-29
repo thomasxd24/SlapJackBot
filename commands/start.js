@@ -112,7 +112,7 @@ module.exports = class extends Command {
                             deck = []
                         }
                         else if (combniations[1].rank.longName == combniations[2].rank.longName && combniations.length >= 2) {
-                            await gameMessage.edit(`**<@${slappedUser.id}>** Slapped a **Double**!\nGame Resuming in 3 seconds!*`, new MessageEmbed(this.formatGameToEmbed(hands, card, deck)))
+                            await gameMessage.edit(`**<@${slappedUser.id}>** Slapped a **Double**!\n*Game Resuming in 3 seconds!*`, new MessageEmbed(this.formatGameToEmbed(hands, card, deck)))
                             hands.get(slappedUser.id).push(...deck);
                             shuffle(hands.get(slappedUser.id))
                             combniations = []
@@ -122,7 +122,7 @@ module.exports = class extends Command {
                             let index = users.indexOf(slappedUser.id) + 1;
                             if (index >= users.length) index = 0;
                             var nextUser = users[index];
-                            await gameMessage.edit(`**<@${slappedUser.id}>** Slapped! But it was not a Jack!\nGame Resuming in 3 seconds!*`, new MessageEmbed(this.formatGameToEmbed(hands, card, deck)))
+                            await gameMessage.edit(`**<@${slappedUser.id}>** Slapped! But it was not a Jack!\n*Game Resuming in 3 seconds!*`, new MessageEmbed(this.formatGameToEmbed(hands, card, deck)))
                             hands.get(nextUser).push(...deck);
                             shuffle(hands.get(nextUser))
                             combniations = []
@@ -133,7 +133,7 @@ module.exports = class extends Command {
                         let index = users.indexOf(slappedUser.id) + 1;
                         if (index >= users.length) index = 0;
                         var nextUser = users[index];
-                        await gameMessage.edit(`**<@${slappedUser.id}>** Slapped! But it was not a Jack!\nGame Resuming in 3 seconds!*`, new MessageEmbed(this.formatGameToEmbed(hands, card, deck)))
+                        await gameMessage.edit(`**<@${slappedUser.id}>** Slapped, but it wasn't the right card!\n*Game Resuming in 3 seconds!*`, new MessageEmbed(this.formatGameToEmbed(hands, card, deck)))
                         hands.get(nextUser).push(...deck);
                         shuffle(hands.get(nextUser))
                         combniations = []
