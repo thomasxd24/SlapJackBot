@@ -7,6 +7,10 @@ a bot made for Discord Hack Week.
 * Make a file called .env, inside put BOT_TOKEN=(yourToken)
 * node index.js to start
 
+# How to play
+* !join to join the party
+* If there are more than 2 people, you can start the game with !start
+
 ## Server Invite
 https://discord.gg/gdepzUq
 
