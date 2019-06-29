@@ -17,9 +17,9 @@ module.exports = class extends Event {
         var index=0;
         setInterval(()=> {
                 let status = [
-                    ".help | Discord Hack Week",
-                    `.help | in ${this.client.guilds.size} guilds`,
-                    `.help | with ${this.client.guilds
+                    "!help | Discord Hack Week",
+                    `!help | in ${this.client.guilds.size} guilds`,
+                    `!help | with ${this.client.guilds
                       .map(guild => guild.memberCount)
                       .reduce((a, b) => a + b)} users`
                   ];
