@@ -22,7 +22,7 @@ module.exports = class extends Command {
             guarded: false,
             nsfw: false,
             permissionLevel: 0,
-            description: '',
+            description: 'Allows you to leave someone\'s party.',
             extendedHelp: 'No extended help available.',
             usage: '',
             usageDelim: undefined,

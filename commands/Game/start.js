@@ -48,7 +48,7 @@ module.exports = class extends Command {
             guarded: false,
             nsfw: false,
             permissionLevel: 0,
-            description: '',
+            description: 'Allows you to start your own game.  You must have at least 2 people in a party to start a game.',
             extendedHelp: 'No extended help available.',
             usage: '',
             usageDelim: undefined,

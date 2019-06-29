@@ -22,7 +22,7 @@ module.exports = class extends Command {
             guarded: false,
             nsfw: false,
             permissionLevel: 0,
-            description: '',
+            description: 'Allows you to join a party of your choice.',
             extendedHelp: 'No extended help available.',
             usage: '[userJoin:user]',
             usageDelim: undefined,
