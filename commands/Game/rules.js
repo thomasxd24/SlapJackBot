@@ -22,7 +22,7 @@ module.exports = class extends Command {
             guarded: false,
             nsfw: false,
             permissionLevel: 0,
-            description: 'Explain how does the game work.',
+            description: 'Explain how does the game works.',
             extendedHelp: 'No extended help available.',
             usage: '',
             usageDelim: undefined,
